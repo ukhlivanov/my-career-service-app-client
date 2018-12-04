@@ -3,14 +3,16 @@ import {
     CLEAR_AUTH,
     AUTH_REQUEST,
     AUTH_SUCCESS,
-    AUTH_ERROR
+    AUTH_ERROR,
+    GET_LOGIN_PAGE
 } from '../actions/auth';
 
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
     currentUser: null,
     loading: false,
-    error: null
+    error: null,
+    start: false
 };
 
 export default function reducer(state = initialState, action) {
@@ -37,6 +39,10 @@ export default function reducer(state = initialState, action) {
         return Object.assign({}, state, {
             loading: false,
             error: action.error
+        });  
+    } else  if(action.type === GET_LOGIN_PAGE){
+        return Object.assign({}, state, {
+            start: true
         });
     }
     return state;

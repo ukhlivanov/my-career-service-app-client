@@ -5,6 +5,13 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 import {saveAuthToken, clearAuthToken} from '../local-storage';
 
+
+export const GET_LOGIN_PAGE = 'GET_LOGIN_PAGE';
+export const getLoginPage = start =>({
+    type: GET_LOGIN_PAGE,
+    start
+});
+
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
     type: SET_AUTH_TOKEN,
