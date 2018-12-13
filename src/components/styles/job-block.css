@@ -1,0 +1,123 @@
+/* .job{
+    border: 1px solid black; 
+    
+ } */
+ ul{
+     padding: 0;
+     margin-top: 5%;
+     margin-bottom: 5%;
+ }
+ li{
+    list-style: none; 
+    position: relative;
+    margin-bottom: 2%;
+
+ }
+ 
+ .job_info{
+     margin-left: 10%;
+     text-align: left;
+    /* display: inline-block; */
+    width: 80%;
+    /* border: 1px solid black;  */
+ }
+ /* .job{
+     margin: 0;
+ } */
+ .job:hover{
+     background: #FAFAFA
+ }
+
+ .job_buttons{
+    width: 20%;
+    /* border: 1px solid black;  */
+    position: absolute;
+    top: 30%;
+    right: 15%;
+ }
+
+ .job_info p{
+     margin: 0;
+ }
+ #job_title{
+     font-size: 20px;
+     font-weight: 700;
+     color: #1D90D5;
+     margin-bottom: 1%;
+ }
+ #job_company{
+    font-size: 18px;
+    font-weight: 500;
+    color: #909090;
+    /* margin-bottom: 15px; */
+ }
+ #job_type{
+    font-size: 16px;
+    font-weight: 700;
+    color: #1D9A00; 
+    margin-bottom: 0.8%;
+ }
+
+ #job_location{
+     color: black;
+     font-size: 16px;
+ }
+
+ #job_created_at{
+    color: #909090;
+    font-size: 14px;
+ }
+
+ .apply_button{
+     width: 45%;
+    padding: 0.6em;
+    cursor: pointer;
+    font-size:16px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    background: #BF8027;
+    border-radius: 5px;
+    margin-right: 10%;
+ }
+
+ .save_button{
+    width: 45%;
+    padding: 0.6em;
+    cursor: pointer;
+    font-size:16px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    background: #8DA69B;
+    border-radius: 5px;
+ }
+
+ .saved_button{
+    width: 45%;
+    padding: 0.6em;
+    /* cursor: pointer; */
+    font-size:16px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    background: #C2C2D0;
+    border-radius: 5px;
+ }
+
+ .delete_button{
+    width: 45%;
+    padding: 0.6em;
+    cursor: pointer;
+    font-size:16px;
+    color: white;
+    font-weight: 600;
+    border: none;
+    background:red;
+    border-radius: 5px;
+}
+
+ .save_button:hover, 
+ .apply_button:hover{
+    background:#F5A331;
+ }

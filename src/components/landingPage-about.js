@@ -8,9 +8,9 @@ export default class LandingPageAbout extends React.Component{
               <div className="grid-2">
                 <div className="center">
    
-                  <i className="fas fa-handshake fa-10x" ></i>
+                  <i className="fas fa-handshake fa-9x" ></i>
                 </div>
-                <div>
+                <div className="aboutus">
                   <h3>About Us</h3>
                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non eos aperiam labore consectetur maiores ea magni exercitationem
                     similique laborum sed, unde, autem vel iure doloribus aliquid. Aspernatur explicabo consectetur consequatur non

@@ -14,14 +14,15 @@ export class SavedJobList extends React.Component{
         </li> 
         );
         return(
-            <div>
-                <p>Welcome in Saved Job list</p>
-                <button onClick={() => this.handleProtectedJobLIst()}>
-                    Protected jobs list
-                </button>
+            <div className="my-jobs">
+                <p className="my-jobs-info">Here you can track all your saved jobs on CareerLine</p>
+                <p className="my-jobs-foundjobs">You have {this.props.savedJobs.length} saved jobs</p>
                 <ul>
                     {savedJobs}
                 </ul>
+                <button id="dashboard-button" onClick={() => this.handleProtectedJobLIst()}>
+                   Dashboard
+                </button>
             </div>
         );
     }

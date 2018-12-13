@@ -3,48 +3,56 @@ import Input from './input';
 import {reduxForm, Field} from 'redux-form';
 import {fetchProtectedJobList} from '../actions/protected-joblist';
 import {getSavedJobList} from'../actions/saved-joblist'
+import {hideSavedJobList} from'../actions/saved-joblist'
 
 export class DashboardForm extends React.Component{
 
     onSubmit(values){
+        this.props.dispatch(hideSavedJobList())
         this.props.dispatch(fetchProtectedJobList(values.location, values.jobtitle, values.jobtype));
         this.props.dispatch(getSavedJobList())
     }
 
     render(){
         return(
-            <div className="dashboard-block dashboard-header">
+            <div className="dashboard-block">
+                <div className="dashboard-form">
                 <form  onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 <Field
+                    id="location"
                     name="location"
                     type="text"
                     component={Input}
-                    placeholder="Location"
+                    placeholder="city, state, zip code, country "
                     component={Input}
                     // validate={[required, nonEmpty]}
                 />
 
                 <Field
+                    id="jobtitle"
                     name="jobtitle"
                     type="text"
                     component={Input}
-                    placeholder="Job title"
+                    placeholder="title, companies, expertise"
                     component={Input}
                     // validate={[required, nonEmpty]}
                 />
                 
-                <Field
+                {/* <Field
+                    id="jobtype"
                     name="jobtype"
                     type="text"
                     component={Input}
                     placeholder="Job type"
                     component={Input}
                     // validate={[required, nonEmpty]}
-                />
-                <button type="submit">
-                    Get Results
+                /> */}
+                <button id="getResults" type="submit">
+                   FIND JOBS
                 </button>
                 </form>
+                </div>
+               
             </div>
         )
     }

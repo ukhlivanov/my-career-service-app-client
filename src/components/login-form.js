@@ -54,7 +54,7 @@ export class LoginForm extends React.Component {
                     LOG IN
                 </button>
                 <br/>
-                <Link to="/register" className="signup-cancel">Sign Up</Link>
+                <Link to="/register" className="signup-cancel">SIGN UP</Link>
                 <br/>
                 <i className="fas fa-handshake fa-7x" ></i>
             </form>

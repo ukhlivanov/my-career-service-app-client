@@ -1,8 +1,11 @@
 import React from 'react'
+import Link from 'react-router'
 import {saveJob, deleteJob} from '../actions/saved-joblist'
 import {connect} from 'react-redux'
 import {getSavedJobList} from'../actions/saved-joblist'
 import {showSavedJobList} from'../actions/saved-joblist'
+import {redirectForApply} from '../actions/saved-joblist'
+import{Redirect} from 'react-router-dom'
 
 
 
@@ -14,9 +17,10 @@ export class Job extends React.Component{
              "type": this.props.type,
              "location": this.props.location,
              "created_at": this.props.created_at,
-             "company": this.props.company
+             "company": this.props.company,
+             "url":this.props.url
         }
-        return this.props.dispatch(saveJob(job));
+        this.props.dispatch(saveJob(job));
     }
 
     handleDeleteJob(){
@@ -25,30 +29,47 @@ export class Job extends React.Component{
         }
         this.props.dispatch(deleteJob(id))
         this.props.dispatch(showSavedJobList());
-        this.props.dispatch(getSavedJobList());    
-        // this.props.dispatch(getSavedJobList())
+    }
+
+    handleApplyJob(){
+        if(this.props.url){
+            window.open(this.props.url, "_blank")
+        }else{
+            alert('No url found')
+        }
+        this.props.dispatch(redirectForApply(this.props.url))
+        
     }
     render(){
+        
         return(
             <div className="job">
-                <p>{this.props.title}</p>
-                <p>{this.props.type}</p>
-                <p>{this.props.location}</p>
-                <p>{this.props.created_at}</p>
-                <p>{this.props.company}</p>
-                
-                {this.props.saved ?
-                    <button onClick={() => this.handleDeleteJob()}>
-                            Delete
-                    </button>:
-                                !this.props.saved && (this.props.savedJobsId.includes(this.props.id)) ?
-                                <button disabled>
-                                        Saved
-                                </button>:
-                                <button onClick={() => this.handleSaveJob()}>
-                                        Save
-                                </button>   
-                }
+                <div className="job_info">
+                    <p id="job_title">{this.props.title}</p>
+                    <p id="job_company_type"><span id="job_company">{this.props.company}</span> - <span id="job_type">{this.props.type}</span></p>
+                    {/* <p id="job_type">{this.props.type}</p> */}
+                    <p id="job_location">{this.props.location}</p>
+                    <p id="job_created_at">{this.props.created_at}</p>
+                </div>
+               
+                <div className="job_buttons">
+                    <button className="control_button apply_button" onClick={() => this.handleApplyJob()}>
+                                Apply
+                    </button>
+                    
+                    {this.props.saved ?
+                        <button className="control_button delete_button" onClick={() => this.handleDeleteJob()}>
+                                Delete
+                        </button>:
+                                    !this.props.saved && (this.props.savedJobsId.includes(this.props.id)) ?
+                                    <button className="control_button saved_button" disabled>
+                                            Saved
+                                    </button>:
+                                    <button className="control_button save_button" onClick={() => this.handleSaveJob()}>
+                                            Save
+                                    </button>   
+                    }
+                </div>
             </div>
         );
     }

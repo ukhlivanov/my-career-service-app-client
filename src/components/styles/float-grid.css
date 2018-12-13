@@ -1,0 +1,580 @@
+/*Responsive design*/
+
+* {
+    box-sizing: border-box;
+  }
+  
+  @media screen and (min-width: 1920px) {
+  
+  }
+    
+  @media screen and (max-width: 1870px) {
+    .top-nav {
+        width: 36%;
+    }
+  }
+
+  @media screen and (max-width: 1420px) {
+    .top-nav {
+        width: 36%;
+    }
+
+    .dashboard-welcome-in{
+
+     }
+
+     #dashboard-welcome p{
+        font-size: 18px;
+     }
+
+     #name, #user_name{
+        font-size: 16px;
+     }
+
+     #log-out{
+        font-size: 17px;
+     }
+
+  }
+
+  @media screen and (max-width: 1325px) {
+
+    .dashboard-welcome-in{
+        top: -21%;
+        right: 35%;
+     }
+    #location,
+    #jobtitle,
+    #jobtype
+    {
+        font-size: 16px;
+    }
+
+    #getResults{
+        font-size:14px;
+    }
+
+    .no-jobs-found{
+        font-size:16px;
+    }
+
+    #my_jobs_button{
+        width: 18%;
+        font-size:14px;
+        font-weight: 600;
+    }
+
+    .found_jobs{
+        font-size:20px;
+    }
+
+
+    #job_title{
+        font-size: 20px;
+    }
+
+    #job_company{
+        font-size: 18px;
+     }
+     #job_type{
+        font-size: 14px;
+     }
+
+     #job_created_at{
+        font-size: 14px;
+     }
+    
+
+     .apply_button,
+     .save_button,
+     .saved_button,
+     .delete_button{
+       font-size:15px;
+    }
+
+    #my_jobs_button{
+        font-size:12px;
+    }
+}
+
+  
+  @media screen and (max-width: 1230px) {
+    .top-nav {
+        width: 40%;
+    }
+    .dashboard-welcome-in{
+        font-size: 10px;
+        top: -15%;
+        right: 37%;
+        text-align: center;
+        padding-right: 10px;
+        padding-left: 10px;
+     }
+
+     #dashboard-welcome p{
+        font-size: 15px;
+     }
+
+     #location,
+     #jobtitle,
+     #jobtype
+     {
+         font-size: 14px;
+     }
+
+     #getResults{
+        font-size:12px;
+    }
+  }
+
+  @media screen and (max-width: 1070px) {
+    .formandresult{
+        margin-top: 8%;
+    }
+    .top-nav {
+        width: 45%;
+    }
+
+    .dashboard-welcome-in{
+        top: -17%;
+        right: 35%;
+     }
+  }
+  
+  @media screen and (max-width: 998px) {
+
+    .content .logo {
+        height: 100px;
+        width: 100px;
+      }
+
+    .top-nav {
+        width: 60%;
+    }
+
+    #name, #user_name{
+        font-size: 13px;
+     }
+
+     #log-out{
+        font-size: 15px;
+     }
+
+     .dashboard-welcome-in{
+         width: 70%;
+        top: -17%;
+        right: 15%;
+     }
+     .my-jobs .my-jobs-info{
+        font-size:18px;
+    }
+    
+    .my-jobs .my-jobs-foundjobs{
+        font-size:16px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+
+    #job_title{
+        font-size: 16px;
+    }
+
+    #job_company{
+        font-size: 14px;
+     }
+     #job_type{
+        font-size: 14px;
+     }
+     #job_created_at{
+        font-size:13px;
+     }
+
+     #job_location{
+        font-size: 14px;
+    }
+
+    .found_jobs{
+        font-size:16px;
+    }
+
+
+     .apply_button,
+     .save_button,
+     .saved_button,
+     .delete_button{
+       font-size:13px;
+    }
+
+  }
+  
+  @media screen and (max-width: 830px) {
+    .top-nav {
+        width: 60%;
+    }
+
+    .nav-data{
+        float: right;
+        font-size: 16px;
+        padding-right: 5px;
+      }
+
+      #dashboard-button{
+        width: 30%;
+        font-size:16px;
+    }
+    .my-jobs .my-jobs-info{
+        font-size:18px;
+    }
+    
+    .my-jobs .my-jobs-foundjobs{
+        font-size:16px;
+    }
+  }
+  
+  @media screen and (max-width: 769px) {
+    .dashboard-block {
+        width:100%;
+    }
+    .formandresult{
+        margin-top: 10%;
+    }
+
+    .dashboard-welcome-in{
+        width: 70%;
+       top: -20%;
+       right: 15%;
+    }
+
+    #dashboard-welcome{
+        height: 200px;
+     } 
+
+     .my-jobs .my-jobs-info{
+        font-size:18px;
+    }
+    
+    .my-jobs .my-jobs-foundjobs{
+        font-size:16px;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+
+    #dashboard-button{
+        width: 30%;
+        font-size:14px;
+    }
+    #dashboard-welcome{
+        height: 150px;
+     } 
+
+     .formandresult{
+        margin-top: 10%;
+    }
+
+    .dashboard-welcome-in{
+        width: 70%;
+       top: -19%;
+       right: 15%;
+    }
+
+    #location,
+    #jobtitle,
+    #jobtype
+    {
+        font-size: 14px;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #getResults{
+       font-size:12px;
+       width: 100%;
+   }
+
+   .no-jobs-found{
+    font-size:16px;
+}
+
+#my_jobs_button{
+    width: 18%;
+    font-size:14px;
+    font-weight: 600;
+    margin-left: 50%;
+    width: 20%;
+}
+
+    #log-out{
+        font-size: 13px;
+    }
+
+    .dashboard-block {
+        width:100%;
+    }
+
+    .my-jobs .my-jobs-info{
+        font-size:18px;
+    }
+    
+    .my-jobs .my-jobs-foundjobs{
+        font-size:16px;
+    }
+    
+  }
+
+  @media screen and (max-width: 570px) {
+    .top-nav {
+        width: 100%;
+    }
+
+    .formandresult{
+        margin-top: 10%;
+    }
+    #name, #user_name{
+        font-size: 11px;
+        padding: 5px;
+     }
+
+     #log-out{
+        font-size: 13px;
+     }
+
+    .dashboard-block {
+        width:100%;
+    }
+
+    .dashboard-welcome-in{
+        width: 100%;
+    }
+    .job_info{
+        margin-left: 10%;
+        text-align: left;
+        margin-bottom: 13%;
+        
+       /* display: inline-block; */
+       width: 100%;
+       /* border: 1px solid black;  */
+    }
+
+    .job_buttons{
+
+        width: 80%;
+        /* border: 1px solid black;  */
+        position: absolute;
+        top: 120%;
+        right: 10%;
+     }
+     .control_button{
+        float: left;
+     }
+     #job_title{
+        font-size: 18px;
+    }
+
+    #job_company{
+        font-size: 16px;
+     }
+     #job_type{
+        font-size: 16px;
+     }
+     #job_created_at{
+        font-size:14px;
+     }
+
+     #job_location{
+        font-size: 16px;
+    }
+
+    .found_jobs{
+        font-size:18px;
+    }
+
+
+     .apply_button,
+     .save_button,
+     .saved_button,
+     .delete_button{
+       font-size:13px;
+       float: left;
+    }
+
+    #my_jobs_button{
+        width: 35%;
+        font-size:14px;
+        font-weight: 600;
+        margin-left: 50%;
+    }
+
+    #dashboard-button{
+        width: 30%;
+        font-size:14px;
+    }
+
+    .my-jobs .my-jobs-info{
+        font-size:18px;
+    }
+    
+    .my-jobs .my-jobs-foundjobs{
+        font-size:16px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+
+     #job_title{
+        font-size: 16px;
+    }
+
+    #job_company{
+        font-size: 14px;
+     }
+     #job_type{
+        font-size: 14px;
+     }
+     #job_created_at{
+        font-size:12px;
+     }
+
+     #job_location{
+        font-size: 14px;
+    }
+
+    .found_jobs{
+        font-size:16px;
+    }
+    #my_jobs_button{
+        width: 35%;
+        font-size:12px;
+        font-weight: 600;
+        margin-left: 50%;
+    }
+
+
+     .apply_button,
+     .save_button,
+     .saved_button,
+     .delete_button{
+       font-size:13px;
+
+    }
+
+    .formandresult{
+        margin-top: 8%;
+    }
+    .dashboard-welcome-in{
+        visibility: hidden;
+    }
+
+    #dashboard-welcome p{
+        color: #38251F;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+     }
+
+     .rl-logo h1 {
+        font-size: 17px;
+      }
+
+      #log-out{
+        font-size: 11px;
+    }
+
+    #dashboard-button{
+        width: 30%;
+        font-size:14px;
+    }
+    .my-jobs .my-jobs-info{
+        font-size:16px;
+    }
+    
+    .my-jobs .my-jobs-foundjobs{
+        font-size:14px;
+    }
+}
+
+ @media screen and (max-width: 400px) {
+
+    #job_title{
+        font-size: 14px;
+    }
+
+    #job_company{
+        font-size: 12px;
+     }
+     #job_type{
+        font-size: 12px;
+     }
+     #job_created_at{
+        font-size:10px;
+     }
+
+     #job_location{
+        font-size: 12px;
+    }
+
+    .found_jobs{
+        font-size:14px;
+    }
+    #my_jobs_button{
+        width: 25%;
+        font-size:12px;
+        font-weight: 600;
+        margin-left: 50%;
+    }
+
+
+     .apply_button,
+     .save_button,
+     .saved_button,
+     .delete_button{
+       font-size:11px;
+
+    }
+
+
+    .rl-log{
+        display: none;
+        visibility: hidden;
+    }
+
+    .job_info{
+        margin-bottom: 15%;
+    }
+
+    #dashboard-button{
+        width: 30%;
+        font-size:14px;
+    }
+
+
+    
+}
+
+@media screen and (max-width: 400px) {
+.rl-logo{
+    visibility: hidden;
+}
+
+.job_info{
+    margin-bottom: 17%;
+}
+
+#dashboard-button{
+    width: 30%;
+    font-size:12px;
+}
+
+.my-jobs .my-jobs-info{
+    font-size:16px;
+}
+
+.my-jobs .my-jobs-foundjobs{
+    font-size:14px;
+}
+    
+}
+
+
+

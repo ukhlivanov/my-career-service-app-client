@@ -4,28 +4,8 @@ import Header from "./landingPage-header"
 import About from "./landingPage-about"
 import Footer from "./landingPage-footer"
 import {connect} from 'react-redux'
+import './styles/float-grid.css'
 import './styles/landing-page.css'
-
-
-// class LandingPage extends React.Component{
-
-//     render(){
-//         return(
-//             <div className="landingPage">
-//                 <Header />
-//                 <About />
-//                 <Footer />
-//             </div>
-//         );
-//     }
-// }
-
-// const mapStateToProps = state => ({
-//     start: state.start
-//  });
-
-// export default connect(mapStateToProps)(LandingPage);
-
 
 export function LandingPage(props){
 

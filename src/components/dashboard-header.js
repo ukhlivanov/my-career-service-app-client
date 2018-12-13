@@ -1,38 +1,31 @@
 import React from 'react'
 import {connect} from 'react-redux';
-import {fetchProtectedData} from '../actions/protected-data';
-import {fetchProtectedJobList} from '../actions/protected-joblist';
+import HeaderBar from './header-bar';
 
 export class DashboardHeader extends React.Component{
-    
     render(){
         return(
             
-            <div className="dashboard-block dashboard-header">
-                <p>Welcome in Career Service</p>
-                <div className="dashboard-username">
-                    Username: {this.props.username}
+            <div className="nav-bar">
+                <div className="rl-logo">
+                    <h1>CareerLine</h1>
                 </div>
-                <div className="dashboard-name">Name: {this.props.name}</div>
-                <div className="dashboard-protected-data">
-                    Protected data: {this.props.protectedData}
+                
+                <div className="top-nav">
+                    <div className="nav-data">
+                        <HeaderBar /> 
+                    </div> 
+                    <div className="nav-data"  id="user_name">
+                        {this.props.username}    
+                    </div>
+                    <div className="nav-data" id="name">
+                        {this.props.name}
+                    </div>                 
                 </div>
+            
             </div>
       
         )
     }
 }
-
-
-
-// const mapStateToProps = state => {
-//     console.log(333)
-//     const {currentUser} = state.auth;
-//     return {
-//         username: state.auth.currentUser.username,
-//         name: `${currentUser.firstName} ${currentUser.lastName}`,
-//         protectedData: state.protectedData.data,
-//         protectedJobList: state.protectedJobList.joblist
-//     };
-// }; 
-// export default connect(mapStateToProps)(DashboardHeader)
+export default connect()(DashboardHeader);

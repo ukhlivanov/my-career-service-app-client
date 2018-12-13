@@ -16,9 +16,8 @@ class LandingPageHeader extends React.Component{
             <div className="content">
                 <img src={logo} className="logo" alt="Job For Fun" />
                 <div className="title">
-                      Looking for a job?<br/>
-                      Welcome To <br/>
-                      Career Service
+                      Looking for a tech job?<br/>
+                      Welcome to CareerLine!
                 </div>
                 <button 
                     type="submit" 

@@ -5,6 +5,7 @@ import {clearAuthToken} from '../local-storage';
 
 export class HeaderBar extends React.Component {
     logOut() {
+        console.log(this.props)
         this.props.dispatch(clearAuth());
         clearAuthToken();
     }
@@ -14,10 +15,11 @@ export class HeaderBar extends React.Component {
         let logOutButton;
         if (this.props.loggedIn) {
             logOutButton = (
-                <button onClick={() => this.logOut()}>Log out</button>
+                <button id="log-out" onClick={() => this.logOut()}>Log out</button>
             );
         }
         return (
+            
             <div className="header-bar">
                 {logOutButton}
             </div>
@@ -26,7 +28,7 @@ export class HeaderBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
 });
 
 export default connect(mapStateToProps)(HeaderBar);

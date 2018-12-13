@@ -10,7 +10,13 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
     if (action.type ===  FETCH_PROTECTED_JOBLIST_SUCCESS) {
-        console.log(action)
+
+        for(var i in action.joblist){
+            let date= new Date(action.joblist[i].created_at)
+            let formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
+            action.joblist[i].created_at = formattedDate;
+        }
+
         return Object.assign({}, state, {
             joblist: action.joblist,
             error: null
