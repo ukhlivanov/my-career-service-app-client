@@ -10,7 +10,9 @@ export class DashboardForm extends React.Component{
     onSubmit(values){
         this.props.dispatch(hideSavedJobList())
         this.props.dispatch(fetchProtectedJobList(values.location, values.jobtitle, values.jobtype));
-        this.props.dispatch(getSavedJobList())
+        console.log("on submit")
+        console.log(this.props.username)
+        this.props.dispatch(getSavedJobList(this.props.username))
     }
 
     render(){

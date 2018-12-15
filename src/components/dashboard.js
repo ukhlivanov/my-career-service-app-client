@@ -14,12 +14,13 @@ import './styles/float-grid.css'
 
 export class Dashboard extends React.Component {
     componentDidMount() {
-        this.props.dispatch(getSavedJobList());
+        console.log("didMount")
+        console.log(this.props.username);
+        this.props.dispatch(getSavedJobList(this.props.username));
+        console.log(this.props);
     }
 
     render() {
-        console.log(1111111);
-        console.log(this.props)
         return (
         <div className="dashboard">
             <DashboardHeader 
@@ -30,12 +31,13 @@ export class Dashboard extends React.Component {
 
             <div className="formandresult">
                 <DaschboardWelcome />
-                <DashboardForm />
+                <DashboardForm  username={this.props.username}/>
                 <DashboardJobResult 
                 jobs={this.props.protectedJobList}
                 savedJobs={this.props.savedJobList}
                 showProtectedJobList={this.props.showProtectedJobList}
                 showSavedJobList={this.props.showSavedJobList}
+                username={this.props.username}
                 />
             </div>
             

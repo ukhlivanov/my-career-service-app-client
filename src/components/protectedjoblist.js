@@ -3,21 +3,23 @@ import Job from './Job'
 import {connect} from 'react-redux'
 import {showSavedJobList, getSavedJobList} from'../actions/saved-joblist'
 import DashboardInfo from './dashboard-info'
-import DashboardMyJobs from './dashboard-my-jobs'
 
-DashboardMyJobs
 
 export  class ProtectedJobList extends React.Component{
 
     handleShowSavedJobLIst(){
-        this.props.dispatch(getSavedJobList()); 
+        console.log(876786)
+        console.log(this.props.username)
+        this.props.dispatch(getSavedJobList(this.props.username)); 
         this.props.dispatch(showSavedJobList());
               
    }
 
     render(){
         let savedJobsId = [];
+        this.props.dispatch(getSavedJobList(this.props.username))
         const savedJobs = this.props.savedJobs;
+        console.log("6767676")
         console.log(this.props)
    
             savedJobs.forEach(element => {
@@ -27,7 +29,7 @@ export  class ProtectedJobList extends React.Component{
         const jobs = this.props.jobs.map((job, index) =>
 
             <li key={index}>
-                <Job {...job} savedJobsId={savedJobsId}/>
+                <Job {...job} savedJobsId={savedJobsId} username={this.props.username}/>
             </li>
 
 

@@ -67,6 +67,7 @@ export default function reducer(state = initialState, action){
             let formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
             action.savedJobList[i].created_at = formattedDate;
         }
+        console.log(action.savedJobList)
         return Object.assign({}, state, {
             savedJobList: action.savedJobList,
             error: null

@@ -11,6 +11,8 @@ import{Redirect} from 'react-router-dom'
 
 export class Job extends React.Component{
     handleSaveJob(){
+        console.log(123123123)
+        console.log(this.props)
         const job = {
             "id": this.props.id,
             "title": this.props.title,
@@ -18,7 +20,8 @@ export class Job extends React.Component{
              "location": this.props.location,
              "created_at": this.props.created_at,
              "company": this.props.company,
-             "url":this.props.url
+             "url":this.props.url,
+             "username": this.props.username
         }
         this.props.dispatch(saveJob(job));
     }

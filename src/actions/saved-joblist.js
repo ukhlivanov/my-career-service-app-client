@@ -53,13 +53,16 @@ export const getSavedJobListError = error => ({
     error
 })
 
-export  const getSavedJobList = () => (dispatch) =>{
+export  const getSavedJobList = username => dispatch =>{
+    console.log("getSavedJobList")
+    console.log(username)
+
     return fetch(`${API_BASE_URL}/job`,{
         method: 'GET',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify()
+        body: JSON.stringify(username)
     })
     .then(res => res.json())
     .then(json => dispatch(getSavedJobListSuccess(json)))
@@ -67,13 +70,15 @@ export  const getSavedJobList = () => (dispatch) =>{
 }
 
 export const saveJob = job => dispatch =>{
+    console.log("savejob")
     return fetch(`${API_BASE_URL}/job`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
         body: JSON.stringify(job)
-    }).then(res => res.json())
+    })
+    .then(res => res.json())
       .then(json => dispatch(saveJobSuccess(json)))
       .catch(err => dispatch(saveJobError(err)))
 }

@@ -10,7 +10,7 @@ export class SavedJobList extends React.Component{
     render(){
         const savedJobs = this.props.savedJobs.map((job, index) =>
         <li key={index}>
-            <Job {...job} />
+            <Job {...job} username={this.props.username}/>
         </li> 
         );
         return(
