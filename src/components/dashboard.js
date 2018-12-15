@@ -5,7 +5,7 @@ import {DashboardHeader} from './dashboard-header'
 import DashboardForm from './dashboard-form'
 import DashboardJobResult from './dashboard-result'
 import DaschboardWelcome from './daschboard-welcome'
-import {getSavedJobList} from'../actions/saved-joblist'
+import {syncSavedJobList} from'../actions/saved-joblist'
 import './styles/dashboard.css'
 import './styles/job-block.css'
 import './styles/float-grid.css'
@@ -14,10 +14,7 @@ import './styles/float-grid.css'
 
 export class Dashboard extends React.Component {
     componentDidMount() {
-        console.log("didMount")
-        console.log(this.props.username);
-        this.props.dispatch(getSavedJobList(this.props.username));
-        console.log(this.props);
+        this.props.dispatch(syncSavedJobList(this.props.username));
     }
 
     render() {

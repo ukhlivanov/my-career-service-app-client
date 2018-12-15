@@ -1,18 +1,15 @@
 import React from 'react'
-import Link from 'react-router'
 import {saveJob, deleteJob} from '../actions/saved-joblist'
 import {connect} from 'react-redux'
-import {getSavedJobList} from'../actions/saved-joblist'
 import {showSavedJobList} from'../actions/saved-joblist'
 import {redirectForApply} from '../actions/saved-joblist'
-import{Redirect} from 'react-router-dom'
+
 
 
 
 export class Job extends React.Component{
     handleSaveJob(){
-        console.log(123123123)
-        console.log(this.props)
+
         const job = {
             "id": this.props.id,
             "title": this.props.title,
@@ -50,7 +47,6 @@ export class Job extends React.Component{
                 <div className="job_info">
                     <p id="job_title">{this.props.title}</p>
                     <p id="job_company_type"><span id="job_company">{this.props.company}</span> - <span id="job_type">{this.props.type}</span></p>
-                    {/* <p id="job_type">{this.props.type}</p> */}
                     <p id="job_location">{this.props.location}</p>
                     <p id="job_created_at">{this.props.created_at}</p>
                 </div>

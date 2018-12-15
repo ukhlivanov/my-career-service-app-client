@@ -4,11 +4,11 @@ import {
     SAVE_JOB_ERROR,
     SHOW_SAVED_JOB_LIST,
     HIDE_SAVED_JOB_LIST,
-    GET_SAVED_JOB_LIST_SUCCESS,
-    GET_SAVED_JOB_LIST_ERROR,
     DELETE_JOB_SUCCESS,
     DELETE_JOB_ERROR,
-    REDIRECT_FOR_APPLY
+    REDIRECT_FOR_APPLY,
+    SYNC_SAVED_JOB_LIST_SUCCESS,
+    SYNC_SAVED_JOB_LIST_ERROR
 } from '../actions/saved-joblist'
 
 const initialState = {
@@ -61,19 +61,18 @@ export default function reducer(state = initialState, action){
             error: null
         })
     } 
-    else if(action.type === GET_SAVED_JOB_LIST_SUCCESS){
-        for(var i in action.savedJobList){
-            let date= new Date(action.savedJobList[i].created_at)
+    else if(action.type === SYNC_SAVED_JOB_LIST_SUCCESS){
+        for(var i in action.syncSavedJobList){
+            let date= new Date(action.syncSavedJobList[i].created_at)
             let formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
-            action.savedJobList[i].created_at = formattedDate;
+            action.syncSavedJobList[i].created_at = formattedDate;
         }
-        console.log(action.savedJobList)
         return Object.assign({}, state, {
-            savedJobList: action.savedJobList,
+            savedJobList: action.syncSavedJobList, 
             error: null
         })
-    }    
-    else if(action.type === GET_SAVED_JOB_LIST_ERROR){
+    }
+    else if(action.type === SYNC_SAVED_JOB_LIST_ERROR){
         return Object.assign({}, state, {
             error: action.error
         })

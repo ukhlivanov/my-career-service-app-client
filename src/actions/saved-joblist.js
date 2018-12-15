@@ -41,33 +41,33 @@ export const hideSavedJobList = savedJobList =>({
     savedJobList
 })
 
-export const GET_SAVED_JOB_LIST_SUCCESS = 'GET_SAVED_JOB_LIST_SUCCESS'
-export const getSavedJobListSuccess = savedJobList => ({
-    type: GET_SAVED_JOB_LIST_SUCCESS,
-    savedJobList
+export const SYNC_SAVED_JOB_LIST_SUCCESS = 'SYNC_SAVED_JOB_LIST_SUCCESS'
+export const syncSavedJobListSuccess = syncSavedJobList =>({
+    type: SYNC_SAVED_JOB_LIST_SUCCESS,
+    syncSavedJobList
 })
 
-export const GET_SAVED_JOB_LIST_ERROR = 'GET_SAVED_JOB_LIST_ERROR'
-export const getSavedJobListError = error => ({
-    type: GET_SAVED_JOB_LIST_ERROR,
+export const SYNC_SAVED_JOB_LIST_ERROR = 'SYNC_SAVED_JOB_LIST_ERROR'
+export const syncSavedJobListError = error => ({
+    type: SYNC_SAVED_JOB_LIST_ERROR,
     error
 })
 
-export  const getSavedJobList = username => dispatch =>{
-    console.log("getSavedJobList")
-    console.log(username)
 
-    return fetch(`${API_BASE_URL}/job`,{
-        method: 'GET',
+export const syncSavedJobList = username => dispatch =>{
+    const data = {username: username}
+    return fetch(`${API_BASE_URL}/job/sync`, {
+        method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(username)
+        body: JSON.stringify(data)
     })
     .then(res => res.json())
-    .then(json => dispatch(getSavedJobListSuccess(json)))
-    .catch(err => dispatch(getSavedJobListError(err)))
+      .then(json => dispatch(syncSavedJobListSuccess(json)))
+      .catch(err => dispatch(syncSavedJobListError(err)))
 }
+
 
 export const saveJob = job => dispatch =>{
     console.log("savejob")

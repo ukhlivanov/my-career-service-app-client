@@ -8,20 +8,13 @@ import DashboardInfo from './dashboard-info'
 export  class ProtectedJobList extends React.Component{
 
     handleShowSavedJobLIst(){
-        console.log(876786)
-        console.log(this.props.username)
-        this.props.dispatch(getSavedJobList(this.props.username)); 
         this.props.dispatch(showSavedJobList());
               
    }
 
     render(){
         let savedJobsId = [];
-        this.props.dispatch(getSavedJobList(this.props.username))
         const savedJobs = this.props.savedJobs;
-        console.log("6767676")
-        console.log(this.props)
-   
             savedJobs.forEach(element => {
                 savedJobsId.push(element.id)
             });
