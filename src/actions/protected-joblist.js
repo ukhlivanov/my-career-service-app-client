@@ -12,27 +12,25 @@ export const fetchProtectedJobListError = error => ({
     error
 });
 export const fetchProtectedJobList = (location, jobtitle, jobtype) => (dispatch) => {
-    console.log(location)
-    console.log(jobtitle)
     if(location===undefined){
         location = ''
     }
     if(jobtitle===undefined){
         jobtitle = ''
     }
-    
-    fetch(`https://jobs.github.com/positions.json?description=${jobtitle}&full_time=false&location=${location}&page=1`)
-        .then(res => {
-            if (!res.ok) {
-                return Promise.reject(res.statusText);
-            }
-            
-            // console.log(res.json())
-            
-            return res.json()
-        })
-        .then(json => dispatch(fetchProtectedJobListSuccess(json)))
-        .catch(err => {
-            dispatch(fetchProtectedJobListError(err));
-        });
+    const data = {
+        jobtitle: jobtitle,
+        location: location
+    }
+
+    return fetch(`${API_BASE_URL}/job/github`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+      .then(json => dispatch(fetchProtectedJobListSuccess(json)))
+      .catch(err => dispatch(fetchProtectedJobListError(err)))
 };
