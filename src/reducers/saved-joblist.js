@@ -24,6 +24,11 @@ const initialState = {
 export default function reducer(state = initialState, action){
     
     if(action.type === SAVE_JOB_SUCCESS){
+        console.log(action.job)
+        let date= new Date(action.job.created_at)
+        let formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
+        action.job.created_at = formattedDate;
+
         return Object.assign({}, state, {
             savedJobList: [...state.savedJobList, action.job],
             lastJobIsSaved: true,
@@ -67,6 +72,7 @@ export default function reducer(state = initialState, action){
             let formattedDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' +  date.getFullYear()
             action.syncSavedJobList[i].created_at = formattedDate;
         }
+        console.log(action.syncSavedJobList)
         return Object.assign({}, state, {
             savedJobList: action.syncSavedJobList, 
             error: null

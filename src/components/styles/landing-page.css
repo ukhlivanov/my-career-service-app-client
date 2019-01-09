@@ -178,8 +178,20 @@ body {
   
     }
 
+    @media (max-width: 1350px) {
+
+      .content {
+        left: 43%;
+  
+      }
+
+      .showcase::after {
+        height: 100vh;
+      }
+    }
 
     @media (max-width: 1000px) {
+
       .aboutus h3{
         text-align: center;
       }
@@ -200,7 +212,7 @@ body {
         width: 400px;
       }
       .showcase::after {
-        height: 80vh;
+        height: 100vh;
       }
     
       .content .logo {
@@ -245,7 +257,7 @@ body {
       width: 400px;
     }
     .showcase::after {
-      height: 80vh;
+      height: 100vh;
     }
   
     .content {
@@ -302,7 +314,7 @@ body {
       width: 400px;
     }
     .showcase::after {
-      height: 80vh;
+      height: 100vh;
     }
   
     .content {
@@ -340,7 +352,7 @@ body {
       width: 350px;
     }
     .showcase::after {
-      height: 70vh;
+      height: 100vh;
     }
   
     .content {
@@ -379,7 +391,7 @@ body {
       width: 300px;
     }
     .showcase::after {
-      height: 50vh;
+      height: 90vh;
     }
   
     .content {
@@ -402,6 +414,7 @@ body {
   }
 
   @media (max-width: 460px) {
+ 
     .aboutus h3{
       text-align: center;
     }
@@ -412,7 +425,7 @@ body {
       font-size: 5em;
     }
     .content {
-      left: 20%;
+      left: 23%;
 
     }
     .content .title {
@@ -422,7 +435,7 @@ body {
       width: 300px;
     }
     .showcase::after {
-      height: 50vh;
+      height: 90vh;
     }
   
     .content {
@@ -433,8 +446,8 @@ body {
 
     .js-start{
       margin-top: 13%;
-      width: 35%;
-      font-size:18px;
+      width: 30%;
+      font-size:17px;
       }
 
       .content .logo {
