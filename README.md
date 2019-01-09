@@ -11,7 +11,6 @@ Career Line is an app that helps to search for a tech job. App offers the most c
 Welcome screen:
 
 ![search](public/img/initial.JPG)
-![search](public/img/login.JPG)
 
 Log in screen:
 
